@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Works</title>
+</head>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: rgba(255, 99, 71, 0.7); /* 70% opacity */ /* Softer background color */
+        margin: 0;
+        padding: 0;
+        color: #333; /* General text color */
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .heading {
+        font-size: 3rem;
+        margin-bottom: 40px;
+        color: #444; /* Softer color for heading */
+        animation: fadeInDown 1s ease;
+    }
+
+    .project {
+        background-color: #fff;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        animation: slideIn 1s ease forwards;
+        opacity: 0;
+        position: relative;
+        transition: transform 0.3s, box-shadow 0.3s;
+        transform: translateX(100%);
+    }
+
+    .project:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Softer shadow */
+        background-color: #eef2f7; /* Light, neutral background on hover */
+    }
+
+    .project h2 {
+        font-size: 1.8rem;
+        color: #333;
+    }
+
+    .project p {
+        font-size: 1.1rem;
+        color: #555;
+        margin: 10px 0 20px;
+    }
+
+    .view-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color:skyblue; /* Softer blue */
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .view-btn:hover {
+        background-color:pink; /* Darker blue on hover */
+        transform: scale(1.05);
+    }
+
+    .back-link {
+        display: inline-block;
+        margin-top: 30px;
+        font-size: 1.2rem;
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+        color: #0056b3;
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <h1 class="heading">My Works</h1>
+        <div class="project" style="animation-delay: 0.9s;">
+            <h2>Project 1: QuizMaster: Interactive Web Quiz</h2>
+            <p>QuizMaster: Interactive Web Quiz is an engaging web application that
+                 tests your knowledge through multiple-choice questions. 
+                 After completing the quiz, users can view their score and 
+                 detailed feedback, with correct answers highlighted in green
+                  and incorrect ones in red. Perfect for
+                 self-assessment, QuizMaster makes learning fun and interactive!</p>
+            <a href="https://swathisundar22.github.io/Quiz-webpage-/" class="view-btn">View Output</a>
+        </div>
+        
+        <div class="project" style="animation-delay: 0.6s;">
+            <h2>Project 2: E-commerce Landing Page</h2>
+            <h3>Glow Garden</h3>
+            <p>The Glow Garden Skincare website is a vibrant e-commerce platform offering a diverse range of high-quality skincare products. With an intuitive design and secure payment options, customers can effortlessly browse and purchase items. The site emphasizes user experience through responsive design and engaging customer reviews, ensuring a satisfying shopping journey.</p>
+            <a href="https://swathisundar22.github.io/Main-task-/" class="view-btn">View Output</a>
+        </div>
+
+        <div class="project" style="animation-delay: 0.3s;">
+            <h2>Project 3: Amazon Homepage Recreation</h2>
+            <p>This project features a recreation of the Amazon 
+                homepage, showcasing a user-friendly interface with 
+                intuitive navigation. It includes key elements such 
+                as product categories, featured deals, and a search 
+                bar for easy access to a wide range of products. 
+                The design emphasizes responsiveness and aesthetics, 
+                providing an engaging shopping experience that mirrors
+                 the original site.</p>
+            <a href="https://swathisundar22.github.io/Amazon-webpage/" class="view-btn">View Output</a>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to My Portfolio</a>
+    </div>
+
+    <script>
+        function viewOutput(link) {
+            window.open(link, "_blank");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swathi Sundar Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff6347;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #fff;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            color: #fefefe;
+            margin-top: 10px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #fefefe;
+            margin-top: 20px;
+            animation: slideIn 2s ease-out;
+        }
+
+        .hero .my-work-button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: fadeInUp 2.5s ease-out;
+        }
+
+        .hero .my-work-button:hover {
+            background-color: #e5533d;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: white;
+            color: #ff6347;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .footer-content {
+            font-size: 1.2rem;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            font-size: 1.4rem;
+            color: #ff6347;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #e5533d;
+        }
+
+        @keyframes fadeInDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Hamburger Icon and Mobile Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 15;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+            transition: 0.4s;
+        }
+
+        .nav-links-mobile {
+            display: none;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.8);
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .nav-links-mobile li {
+            margin: 20px 0;
+        }
+
+        .nav-links-mobile a {
+            font-size: 2rem;
+            color: #ff6347;
+        }
+
+        /* Mobile-specific style */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links-mobile.open {
+                display: flex;
+            }
+
+            .nav-links-mobile.open .hamburger div:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .nav-links-mobile.open .hamburger div:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-links-mobile.open .hamburger div:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">Swathi's Portfolio</div>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index1.html">About Me</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+        <ul class="nav-links-mobile">
+            <li><a href="index0.html">Home</a></li>
+            <li><a href="index1.html">About Me</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Hello, I'm Swathi Sundar</h1>
+    <h2>Front-End Developer</h2>
+    <p>Crafting responsive and user-centric digital experiences</p>
+    <button class="my-work-button" onclick="window.location.href='myworks.html'">View My Work</button>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Swathi Sundar. All rights reserved.</p>
+        <div class="social-icons">
+        <a href="mailto:swathisundar223@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/Swathi-MCA"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/swathi-s-b3575b2a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinksMobile = document.querySelector('.nav-links-mobile');
+
+    hamburger.addEventListener('click', () => {
+        navLinksMobile.classList.toggle('open');
+        hamburger.classList.toggle('open');
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Full gradient background */
+    color: #333;
+    min-height: 100vh; /* Ensure the body takes full height */
+}
+
+header {
+    background: white; /* Set navbar background to transparent */
+    color:#ff6347;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    position: fixed; /* Keep navbar at the top */
+    top: 0;
+    left: 0;
+    z-index: 10;
+    font-size: 1.3rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: #ff6347;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    font-size: 1.4rem;
+    color: #ff6347;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: white;
+    background-color: #ff6347;
+    border-radius: 10px;
+}
+
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #ff6347;
+}
+
+.navbar.open .nav-links {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.8); /* Mobile navbar background transparent */
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        display: none;
+        z-index: 9;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+.hero {
+    background: transparent; /* Set hero section background to transparent */
+    text-align: center;
+    padding: 80px 20px; /* Increased padding for better spacing */
+    border-radius: 10px;
+    margin: 0; /* Removed margin for seamless layout */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-out forwards; /* Keep the animation on load */
+    margin-top: 0; /* Adjusted margin to remove gap with navbar */
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #fefefe;
+}
+
+.contact-info {
+    margin: 20px 0;
+}
+
+.contact-info a {
+    color: #ff6347; /* Link color */
+}
+.contact-info a:hover {
+    color: #ff6347;
+    background-color: white;
+    border-radius: 10px; /* Link color */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-in-out; /* Animation for the form */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.contact-form textarea {
+    resize: none; /* Prevent resizing of the textarea */
+    height: 100px; /* Set a fixed height */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff6347; /* Focus border color */
+    box-shadow: 0 0 5px rgba(255, 100, 100, 0.5);
+}
+
+.contact-form button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #e5533d; /* Darker shade on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+footer {
+    background: white; /* Set footer background to transparent */
+    color:#ff6347;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    margin: 0; /* Remove margin for seamless layout */
+}
+
+.footer-content {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    font-size:1.4rem;
+    color: #ff6347;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff6347; /* Change color on hover */
+}
+
+/* Unique Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Swathi's Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index1.html">About Me</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Get in Touch</h1>
+        <p>If you have any questions or just want to connect, feel free to reach out!</p>
+        <div class="contact-info">
+            <p>Email: <a href="#">swathisundar223@gmail.com</a></p>
+            <p>WhatsApp: <a href="#">7538828002</a></p>
+        </div>
+        <form id="contactForm" class="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Swathi Sundar. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://github.com/Swathi-MCA" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:your.swathisundar223@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/swathi-s-b3575b2a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        // Toggle the visibility of the mobile navbar
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+        // Form submission event
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            // Handle form submission logic here (e.g., send data to the server)
+            alert("Message Sent Successfully!");
+        });
+    </script>
+</body>
+</html>
